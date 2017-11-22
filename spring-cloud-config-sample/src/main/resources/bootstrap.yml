@@ -1,6 +1,15 @@
 spring:
   application:
-    name: bar
+    name: cloud-config
   cloud:
     config:
-      uri: http://localhost:${config.port:8888}
+      uri: http://localhost:8888/
+      user: mgh
+      password: mgh123
+      profile: dev
+      label: master
+
+endpoints:
+  refresh:
+    enabled: true
+    sensitive: false

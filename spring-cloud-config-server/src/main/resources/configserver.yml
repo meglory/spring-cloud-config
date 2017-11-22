@@ -2,20 +2,29 @@ info:
   component: Config Server
 spring:
   application:
-    name: configserver
+    name: cloud-config
   jmx:
     default_domain: cloud.config.server
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/spring-cloud-samples/config-repo
+          uri: https://github.com/meglory/config-repo
+          search-paths: cloud-config
           repos:
             - patterns: multi-repo-demo-*
-              uri: https://github.com/spring-cloud-samples/config-repo
+              uri: https://github.com/meglory/config-repo
 
 server:
   port: 8888
 management:
   context_path: /admin
+
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: mgh
+    password: mgh123
  
